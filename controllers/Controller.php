@@ -70,9 +70,15 @@ Class Controller{
         $this->content = $tempHTML;
     }
 
-    public function goHere($controller, $action, $additional = ""){
+    public function goHere($controller, $action, $additional = "", $debug=false){
 
         $goToThisLocation = "location: index.php?controller=".$controller."&action=".$action."&".$additional;
+        
+        if($debug)
+        {
+            echo $goToThisLocation;
+            die();
+        }
         
         header($goToThisLocation);
     }

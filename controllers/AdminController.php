@@ -6,15 +6,25 @@ Class AdminController extends Controller{
 
     public function main(){
         
-        $this->loadView("views/header.php", 1, "content");
-        $this->loadView("views/admin.php", 1, "content");
-        $this->loadView("views/footer.php", 1, "content");
+        $this->loadData(Vips::getAll(), "oVips");
+        $this->loadView("views/header.php");
+        $this->loadView("views/bodyVips.php");
+        $this->loadView("views/footer.php");
+        $this->loadFinalView("views/main.php");
+    }
+
+    public function vip(){
+
+        $this->loadData(Vip::getVIP($_GET['uID']), "oVip");
+        $this->loadView("views/header.php");
+        $this->loadView("views/bodyVip.php");
+        $this->loadView("views/footer.php");
         $this->loadFinalView("views/main.php");
     }
 
     public function pretrip(){
 
-        if($_SESSION["adminID"] == "")
+        if($_SESSION["aID"] == "")
         {
             $this->goHere("public", "main");
             

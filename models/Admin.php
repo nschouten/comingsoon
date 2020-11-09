@@ -7,11 +7,11 @@ Class Admin{
         $this->admin = $adminData["strUsername"];
     }
 
-    public static function aLogin($strUsername, $strPassword){
-        $arrAdmin = DB::query("SELECT * 
-                                FROM admin
-                                WHERE strUsername='".$strUsername."' AND strPassword='".$strPassword."'");
-    
+    public static function Login($strUsername, $strPassword){
+        $arrAdmin = DB::query("SELECT * FROM admins WHERE strUsername='".$strUsername."' AND strPassword='".$strPassword."'");
+       
+        print_r($arrAdmin);
+        
         if($arrAdmin)
         {
             return $arrAdmin[0]["id"];
@@ -25,8 +25,8 @@ Class Admin{
     public static function getCurrentAdmin(){
 
         $arrAdmin = DB::query("SELECT *
-                                FROM admin
-                                WHERE id =".$_SESSION["adminID"]);
+                                FROM admins
+                                WHERE id =".$_SESSION["aID"]);
 
         return new Admin($arrAdmin[0]);
     }

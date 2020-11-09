@@ -61,7 +61,8 @@ if(file_exists($controllerFile)) //if the controllerFile variable (the doc path)
 	if(method_exists($oController, $action)) //now run the 'main' function
 	{
         $oController->$action();
-        echo $oController->content;
+		echo $oController->content;
+	
 
 	} else {
 

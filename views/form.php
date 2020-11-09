@@ -48,9 +48,12 @@
             </div>
         </div>
 
-        <div class="fieldgroup">
+        <div class="fieldgroup required">
             <label>Upload Image</labeL>
             <input type="file" name="strFileName" id="strFileName">
+            <div class="attention">
+                <p>You forgot a field!</p>
+            </div>
         </div>
         
         <div class="fieldgroup" id="sbmt">

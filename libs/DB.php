@@ -11,34 +11,38 @@ Class DB{
         $safeConnect = parse_ini_file("../cs-db.ini"); 
 
         return mysqli_connect($safeConnect["host"], $safeConnect["user"], $safeConnect["password"], $safeConnect["database"]);
-
-        // if($conn)
-        // {
-        //     echo("connection success");
-        //     die();
-        // } else {
-        //     echo("failed");
-        //     die();
-        // }
-}
+    }
 
     static public function query($sql){
-      
+        
         $oDB = new DB();
 
+        if($oDB->debug)
+        {
+            $oDB->debug($sql);
+        }
+        
         $results = mysqli_query($oDB->connect(), $sql);
 
         if($results)
         {
-            $data = ""; 
+            $data = null;
 
             while($row = mysqli_fetch_assoc($results))
             {
+                
                 $data[] = $row;
+                
             }
 
             return $data;
             
         }
+    }
+
+    public function debug($sql){
+
+         //echo “<script>console.log(‘$sql’)</script>“;
+
     }
 }

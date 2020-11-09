@@ -1,6 +1,6 @@
 <?php
 
-Class Vip{
+Class Vips{
 
     public function __construct($userData){
 
@@ -16,21 +16,21 @@ Class Vip{
 
     }
 
-    public static function getVIP(){
-        
-        $vip = DB::query("SELECT CONCAT(strFirstName, '', strLastName) AS strFullName, id, strEmail, strPhone, strCountry, intAge, strFileName
-                        FROM VIP 
-                        WHERE id=".$_GET['uID']."");
+    static public function getAll(){
+        $vips = DB::query("SELECT CONCAT(strFirstName, ' ', strLastName) AS strFullName, id, strEmail, strPhone, strCountry, intAge, strFileName
+                            FROM VIP 
+                            ORDER BY strLastName");
+      
+        $arrVIPs = array();
 
-        $arrVIP = array();
-
-        foreach($vip as $data)
+        foreach($vips as $vip)
         {
-            $arrVIP[] = new Vip($data);
+            $arrVIPs[] = new Vips($vip);
+           
         }
 
-        return $arrVIP;
+        return $arrVIPs;
+        
     }
 }
-
 ?>

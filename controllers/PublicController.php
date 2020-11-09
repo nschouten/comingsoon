@@ -30,17 +30,17 @@ Class PublicController extends Controller{
     }
 
     public function processLogin(){
-        $_SESSION["aID"] = Admin::aLogin($_POST["strUsername"], $_POST["strPassword"]);
-        
+        $_SESSION["aID"] = Admin::Login($_POST["strUsername"], $_POST["strPassword"]);
+       
 		if ($_SESSION["aID"])
-		{
+		{   
             $this->goHere("admin", "main");
+        
             // if details entered exist in the db allow user to login
 		} else {
 
 			$this->goHere("public", "errorLogin"); // if details entered do not exist in the db redirect user back to login form with error
         }
-        
     }
 
     public function processUser(){
@@ -56,7 +56,9 @@ Class PublicController extends Controller{
     
     public function errorLogin(){
 
-        $this->loadView("views/loginError.php");
+        $this->loadView("views/header.php", 1, "content");
+        $this->loadView("views/loginError.php", 1, "content");
+        $this->loadView("views/footer.php", 1, "content");
         $this->loadFinalView("views/main.php");
 
     }

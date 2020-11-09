@@ -340,11 +340,24 @@ body{
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1.4px;
 }
+.login.error form p{
+    margin-bottom: 5px;
+    text-align: center;
+}
 .login form{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
+}
+
+.login.error form h2{
+    font-family: 'EB Garamond', serif;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .login form h2{
@@ -427,6 +440,10 @@ body{
 
 .web-only{
     display: none;
+}
+
+.vip .main{
+    height: 300px;
 }
 
 @media only screen and (min-width: 600px) {
