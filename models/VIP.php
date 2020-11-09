@@ -18,7 +18,7 @@ Class Vip{
 
     public static function getVIP(){
         
-        $vip = DB::query("SELECT CONCAT(strFirstName, '', strLastName) AS strFullName, id, strEmail, strPhone, strCountry, intAge, strFileName
+        $vip = DB::query("SELECT CONCAT(strFirstName, ' ', strLastName) AS strFullName, id, strEmail, strPhone, strCountry, intAge, strFileName
                         FROM VIP 
                         WHERE id=".$_GET['uID']."");
 
