@@ -1,11 +1,19 @@
-/* font-family: 'EB Garamond', serif;
-
-font-family: 'Montserrat', sans-serif; */
-
 *{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+}
+
+.attention{
+    opacity: 0; 
+    color: #CD5C5C;
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.error .attention{
+    opacity: 1;
 }
 
 body{
@@ -48,14 +56,14 @@ body{
     justify-content: right;
 }
 
-.header .burger {
+.burger {
     width: 30px;
     height: 40px;
 	margin-right: 20px;
 	margin-top: 50px;
 }
 
-.header .burger .cb{
+.burger .cb{
     position: absolute;
 	top: 40px;
 	right: 20px;
@@ -65,15 +73,15 @@ body{
 	opacity: 0;
 }
 
-.header .burger .cb:checked ~ .flyout{
+.burger .cb:checked ~ .flyout{
     left: 0px;
 }
 
-.header .burger .cb:checked ~ .bars span{
+.burger .cb:checked ~ .bars span{
     background: #E0AD91;
 }
 
-.header .burger .bars span{
+.burger .bars span{
     height: 1px;
 	width: 100%;
 	background: #333;
@@ -84,7 +92,7 @@ body{
 	border-radius: 10px;
 }
 
-.header .burger .flyout{
+.burger .flyout{
     background: rgba(255, 255, 255, 0.95);
 	width: 50vw;
 	height: 100vh;
@@ -96,11 +104,11 @@ body{
     z-index: 1;
 }
 
-.header .burger .flyout ul{
+.burger .flyout ul{
     list-style: none;
 }
 
-.header .burger .flyout a{
+.burger .flyout a{
     color: #333;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
@@ -110,7 +118,7 @@ body{
     letter-spacing: 1.4px;
 }
 
-.header .burger .flyout h3{
+.burger .flyout h3{
     font-family: 'EB Garamond', serif;
     font-weight: 400;
     margin-bottom: 5px;
@@ -140,6 +148,10 @@ body{
     letter-spacing: 1.2px;
     font-weight: 400;
     color: #333;
+}
+
+.body{
+    height: 100%;
 }
 
 .body .primary{
@@ -198,7 +210,7 @@ body{
 }
 
 .body .quaternary{
-    background: url("../imgs/hero5.jpg");
+    background: url("../imgs/hero2.jpg");
     width: 100vw;
     height: 200px;
     background-position: center center;
@@ -226,13 +238,8 @@ body{
 .body .quinary .handle{
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    background: #F5F0ED;
-    width: 85%; 
-    margin: 0 auto;
-    /* padding: 5px; */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 6px solid #d29d5cb6; 
+    background: #d29d5cb6;
+    padding: 20px;
     border-radius: 2px;
 }
 
@@ -244,6 +251,112 @@ body{
     width: 90%;
     margin: 0 auto;
     line-height: 1.5;
+}
+
+.senary{
+    height: 100%;
+    margin-bottom: 40px;
+}
+
+.senary h3{
+    font-family: 'EB Garamond', serif;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.senary form{
+    width: 85%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.senary form .fieldgroup{
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#sbmt{
+    margin: 0px;
+    margin-top: 10px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.senary form label{
+    display: block;
+    font-family: 'EB Garamond', serif;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.senary form input[type=text]{
+    height: 30px;
+    background: #EADED0;
+    border: none;
+    width: 100%;
+    padding-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.senary form input[type=submit]{
+    background: none;
+    border: 1px solid #333;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 200;
+    height: 50px;
+    width: 140px;
+    letter-spacing: 1.4px;
+}
+
+.senary form input[type=file]{
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.4px;
+}
+.login form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.login form h2{
+    font-family: 'EB Garamond', serif;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login input[type=text], 
+.login input[type=password]{
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    background: #f8f5f0;
+    padding-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.4px;
+}
+
+.login input[type=submit]{
+    height: 40px;
+    width: 100px;
+    background: #f8f5f0;
+    border: 1px solid #333;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
 }
 
 .footer{
@@ -294,6 +407,329 @@ body{
 
 }
 
+.web-only{
+    display: none;
+}
+
 @media only screen and (min-width: 600px) {
+
+    .web-only{
+        display: block;
+    }
+
+    .mobile-only{
+        display: none;
+    }
+
+    .sub-wrapper{
+        
+    }
+
+    .header{
+        height: 130px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-bottom: 10px;
+    }
+    
+    .header .primary{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-left: 50px;
+    }
+    
+    .header .primary img{
+        height: 100px;
+        text-align: left;
+    }
+
+    .header .secondary{
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin-right: 50px;
+    }
+
+    .nav{
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1.4px;
+    }
+
+    .nav a{
+        float: left; 
+        margin-left: 100px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+    
+    .hero {
+        background: url("../imgs/heropalm.png");
+        width: 100vw;
+        height: 400px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero img{
+        max-width: 100vw;
+    }
+    
+    .hero h2{
+        position: absolute;
+        font-family: 'EB Garamond', serif;
+        letter-spacing: 1.2px;
+        font-size: 40px;
+        font-weight: 400;
+        color: #333;
+    }
+    
+    .body{
+        height: 100%;
+    }
+    
+    .body .primary{
+        background: url("../imgs/shadows2.png");
+        width: 100vw;
+        height: 500px;
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .body .primary p{
+        font-size: 24px;
+        width: 70%;
+        margin: 0 auto;
+        text-align: justify;
+        font-family: 'EB Garamond', serif;
+        color: #333;
+    }
+    
+    .itl{
+        font-style: italic;
+        font-weight: 500;
+    }
+    
+    .emp{
+        font-size: 34px;
+    }
+    
+    .body .secondary{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    .body .secondary img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .body .secondary.ad img{
+        height: 80%;
+    }
+    
+    .body .tertiary{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+    }
+    
+    .body .tertiary p{
+        font-family: 'EB Garamond', serif;
+        color: #333;
+        font-size: 24px;
+        width: 70%;
+        text-align: center;
+    }
+    
+    .body .quaternary{
+        background: url("../imgs/hero2.jpg");
+        width: 100vw;
+        height: 500px;
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .body .quinary {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    
+    .body .quinary h3{
+        font-family: 'EB Garamond', serif;
+        letter-spacing: 1.2px;
+        font-weight: 400;
+        color: #333;
+        text-align: center;
+        margin-bottom: 100px;
+        font-size: 30px;
+    }
+    
+    .body .quinary .handle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #d29d5cb6;
+        padding: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-radius: 2px;
+    }
+    .body .quinary .col {
+        margin-bottom: 100px;
+        width: 80%; 
+        margin: 0 auto;
+    }
+   
+    
+    .body .quinary .col span{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        float: left;
+        width: 33.33%;
+    }
+    
+    .senary{
+        height: 100%;
+        margin-bottom: 100px;
+    }
+    
+    .senary h3{
+        font-family: 'EB Garamond', serif;
+        letter-spacing: 1.2px;
+        font-weight: 400;
+        color: #333;
+        text-align: center;
+        margin-bottom: 100px;
+        font-size: 24px;
+    }
+    
+    .senary form{
+        width: 70%;
+        margin: 0 auto;
+        overflow: auto;
+    }
+    
+    .senary form .fieldgroup{
+        float: left;
+        width: 50%;
+        margin-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    #sbmt{
+        margin: 0px;
+        margin-top: 10px;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .senary form label{
+        display: block;
+        font-family: 'EB Garamond', serif;
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+    
+    .senary form input[type=text]{
+        height: 40px;
+        background: #EADED0;
+        border: none;
+        width: 100%;
+        padding-left: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+    }
+    
+    .senary form input[type=submit]{
+        background: none;
+        border: 1px solid #333;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-weight: 200;
+        height: 70px;
+        width: 170px;
+        letter-spacing: 1.4px;
+        font-size: 14px;
+        transition: all .5s ease;
+    }
+
+    .senary form input[type=submit]:hover{
+        border-radius: 50%;
+    }
+    
+    .senary form input[type=file]{
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1.4px;
+    }
+    
+    .footer{
+        height: 120px;
+        width: 100vw;
+        background: #102A26;
+        /* position: absolute;
+        bottom: 0px; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 15px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    
+    .footer .social{
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer .social img{
+        height: 20px;
+        margin-right: 15px;
+    }
+    
+    .footer .social h3{
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 12px;
+        letter-spacing: 1.4px;
+        color: #f8f5f0;
+        margin-bottom: 10px;
+    }
+    
+    .footer .links{
+        text-align: right;
+        margin-top: 10px;
+    }
+    
+    .footer .links a{
+        display: block;
+        color: #f8f5f0;
+        letter-spacing: 1.2px;
+        text-decoration: none;
+        font-family: 'EB Garamond', serif;
+        font-weight: 200;
+        font-size: 14px;
+    
+    }
 
 }
