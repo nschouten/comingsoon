@@ -2,7 +2,7 @@
 
 Class Admin{
 
-    public function __construct($adminData){
+    public function __construct($userData){
 
         $this->admin = $adminData["strUsername"];
     }

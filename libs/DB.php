@@ -23,10 +23,8 @@ Class DB{
 }
 
     static public function query($sql){
-        
+      
         $oDB = new DB();
-        // echo($sql);
-        // die();
 
         $results = mysqli_query($oDB->connect(), $sql);
 

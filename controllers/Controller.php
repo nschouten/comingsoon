@@ -73,6 +73,7 @@ Class Controller{
     public function goHere($controller, $action, $additional = ""){
 
         $goToThisLocation = "location: index.php?controller=".$controller."&action=".$action."&".$additional;
+        
         header($goToThisLocation);
     }
 }

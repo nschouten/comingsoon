@@ -2,6 +2,9 @@
     <div class="hero"><h2>Welcome Admin</h2></div>
 
     <div class="content primary">
+
+      
+
     </div>
 
     <div class="content secondary ad">

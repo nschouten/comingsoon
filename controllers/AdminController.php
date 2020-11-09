@@ -1,16 +1,16 @@
 <?php
+
 Class AdminController extends Controller{
 
     var $content = "";
 
-    // public function adminMain(){
+    public function main(){
         
-    //     $this->loadView("views/header.php");
-    //     $this->loadView("views/admin.php");
-    //     $this->loadView("views/footer.php");
-    //     $this->loadFinalView("views/main.php");
-
-    // }
+        $this->loadView("views/header.php", 1, "content");
+        $this->loadView("views/admin.php", 1, "content");
+        $this->loadView("views/footer.php", 1, "content");
+        $this->loadFinalView("views/main.php");
+    }
 
     public function pretrip(){
 
@@ -27,3 +27,4 @@ Class AdminController extends Controller{
         }
     }
 }
+?>

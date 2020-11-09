@@ -1,9 +1,17 @@
 <div class="body main">
-    <div class="hero"><h2>Coming Soon!</h2></div>
+    <div class="hero">
+        <h2>Coming Soon!</h2>
+    </div>
 
     <div class="content primary">
-    <p>The wait is almost over! Soon you’ll have access to <span class="itl">latin america’s</span> latest &amp; hottest fashion trends. Alma’s perflectly curated collection is <span class="itl">ideal</span> for any occasion. From everyday wear &amp; date nights, to formal events  &amp; parties, you’ll be sure to stop traffic.</p>
+        <div class="hh">
+            <p>The wait is almost over! Soon you’ll have access to <span class="itl">latin america’s</span> latest &amp; hottest fashion trends. Alma’s perflectly curated collection is <span class="itl">ideal</span> for any occasion. From everyday wear &amp; date nights, to formal events  &amp; parties, you’ll be sure to stop traffic.</p>
+            <div class="cta">
+                <a id="vipcta" href="#vipsignup">Become a VIP</a>
+            </div>
+        </div>  
     </div>
+
     <div class="content secondary">
         <img src="imgs/hero7.jpg" alt="dress1"/>
         <img src="imgs/hero9.jpg" alt="dress9"/>

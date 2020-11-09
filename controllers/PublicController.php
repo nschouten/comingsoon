@@ -6,35 +6,35 @@ Class PublicController extends Controller{
 
     public function main(){
         
-        $this->loadView("views/header.php");
-        $this->loadView("views/body.php");
-        $this->loadView("views/form.php");
-        $this->loadView("views/footer.php");
+        $this->loadView("views/header.php", 1, "content");
+        $this->loadView("views/body.php", 1, "content");
+        $this->loadView("views/form.php", 1, "content");
+        $this->loadView("views/footer.php", 1, "content");
         $this->loadFinalView("views/main.php");
     }
 
     public function successVIP(){
         
-        $this->loadView("views/header.php");
-        $this->loadView("views/successVIP.php");
-        $this->loadView("views/footer.php");
+        $this->loadView("views/header.php", 1, "content");
+        $this->loadView("views/successVIP.php", 1, "content");
+        $this->loadView("views/footer.php", 1, "content");
         $this->loadFinalView("views/main.php");
     }
 
     public function adminLogin(){
 
-        $this->loadView("views/header.php");
-        $this->loadView("views/adminLogin.php");
-        $this->loadView("views/footer.php");
+        $this->loadView("views/header.php", 1, "content");
+        $this->loadView("views/adminLogin.php", 1, "content");
+        $this->loadView("views/footer.php", 1, "content");
         $this->loadFinalView("views/main.php");
     }
 
     public function processLogin(){
-        $_SESSION["adminID"] = Admin::aLogin($_POST["strUsername"], $_POST["strPassword"]);
-     
-		if ($_SESSION["adminID"])
+        $_SESSION["aID"] = Admin::aLogin($_POST["strUsername"], $_POST["strPassword"]);
+        
+		if ($_SESSION["aID"])
 		{
-            $this->goHere("admin", "adminMain"); 
+            $this->goHere("admin", "main");
             // if details entered exist in the db allow user to login
 		} else {
 
@@ -44,9 +44,9 @@ Class PublicController extends Controller{
     }
 
     public function processUser(){
-        $_SESSION["userID"] = VIP::addUser($_POST['strFirstName'], $_POST['strLastName'], $_POST['strEmail'], $_POST['strPhone'], $_POST['strCountry'], $_POST['strDOB']);
+        $_SESSION["uID"] = VIP::addUser($_POST['strFirstName'], $_POST['strLastName'], $_POST['strEmail'], $_POST['strPhone'], $_POST['strCountry'], $_POST['strDOB']);
 
-        if($_SESSION["userID"])
+        if($_SESSION["uID"])
         {
             $this->goHere("public", "successVIP");
         } else {
@@ -55,6 +55,7 @@ Class PublicController extends Controller{
     }
     
     public function errorLogin(){
+
         $this->loadView("views/loginError.php");
         $this->loadFinalView("views/main.php");
 

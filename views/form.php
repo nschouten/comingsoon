@@ -1,4 +1,4 @@
-<div class="content senary">
+<div class="content senary" id="vipsignup">
         <h3>Fill out the form below!</h3>
     <form action="index.php" method="post"  id="appForm" enctype="multipart/form-data">
     <input type="hidden" name="controller" value="vip"/>
