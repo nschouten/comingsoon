@@ -8,17 +8,24 @@ Class Admin{
     }
 
     public static function Login($strUsername, $strPassword){
-        $arrAdmin = DB::query("SELECT * FROM admins WHERE strUsername='".$strUsername."' AND strPassword='".$strPassword."'");
-       
-        print_r($arrAdmin);
-        
-        if($arrAdmin)
+
+        if($_POST["strUsername"] && $_POST["strPassword"])
         {
-            return $arrAdmin[0]["id"];
+            $strUsername = mysqli_real_escape_string(DB::connect(), $_POST["strUsername"]);
+            $strPassword = mysqli_real_escape_string(DB::connect(), $_POST["strPassword"]);
+    
+            $arrAdmin = DB::query("SELECT * FROM admins WHERE strUsername='".$strUsername."' AND strPassword='".$strPassword."'");
+        
+            print_r($arrAdmin);
+            
+            if($arrAdmin)
+            {
+                return $arrAdmin[0]["id"];
 
-        } else {
+            } else {
 
-            return false;
+                return false;
+            }
         }
     }
 
